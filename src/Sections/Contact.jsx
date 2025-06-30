@@ -109,7 +109,7 @@ const Contact = () => {
         <input
           type="hidden"
           name="_next"
-          value="http://localhost:5173/"
+          value="https://sciq-tutoring-services.vercel.app/"
         ></input>
         <br />
         <button
