@@ -40,51 +40,12 @@ const Contact = () => {
   };
 
   const sendDetails = async (e) => {
-    e.preventDefault();
-
     if (!validate()) {
-      console.log("Data invalid");
+      e.preventDefault();
       return;
     }
-
-    try {
-      const res = await fetch(
-        "https://formsubmit.co/sciq.tutoringservices@gmail.com",
-        {
-          headers: {
-            accept:
-              "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
-            "accept-language": "en-US,en;q=0.8",
-            "cache-control": "max-age=0",
-            "content-type": "application/x-www-form-urlencoded",
-            priority: "u=0, i",
-            "sec-fetch-dest": "document",
-            "sec-fetch-mode": "navigate",
-            "sec-fetch-site": "cross-site",
-            "sec-fetch-user": "?1",
-            "sec-gpc": "1",
-            "upgrade-insecure-requests": "1",
-          },
-          referrer: "http://localhost:5173/",
-          referrerPolicy: "strict-origin-when-cross-origin",
-          body: `name=Userasdf&email=pankajsehrawat.605%40gmail.com&query=This+is+custom+query&_next=http%3A%2F%2Flocalhost%3A5173%2F`,
-          method: "POST",
-          mode: "cors",
-          credentials: "omit",
-        },
-      );
-
-      if (res.ok) {
-        console.log("Success!");
-        setFormDetails(initialState);
-        setIsSubmitted(true);
-        setTimeout(() => setIsSubmitted(false), 5000);
-      } else {
-        console.log("Submission failed.");
-      }
-    } catch (error) {
-      console.log("Error in posting data", error);
-    }
+    setIsSubmitted(true);
+    setTimeout(() => setIsSubmitted(false), 5000);
   };
 
   return (
@@ -97,7 +58,7 @@ const Contact = () => {
       </h2>
       {isSubmitted && <p>Thank You! Your response has been submitted.</p>}
       <form
-        // onSubmit={sendDetails}
+        onSubmit={sendDetails}
         action="https://formsubmit.co/sciq.tutoringservices@gmail.com"
         method="POST"
         id="details-form"
@@ -110,7 +71,6 @@ const Contact = () => {
             name="name"
             id="name"
             placeholder="Name"
-            required
             value={formDetails.name}
             onChange={(e) => {
               setFormDetails({ ...formDetails, name: e.target.value });
@@ -124,7 +84,6 @@ const Contact = () => {
             name="email"
             id="email"
             placeholder="Email"
-            required
             value={formDetails.email}
             className="w-60 rounded border-2 border-gray-300 p-2 focus:outline-gray-600"
             onChange={(e) => {
@@ -138,7 +97,6 @@ const Contact = () => {
           name="query"
           ref={queryRef}
           id="query"
-          required
           placeholder="Ask me!"
           value={formDetails.query}
           className="h-24 w-128 rounded border-2 border-gray-300 p-2 focus:outline-gray-600 max-[576px]:w-60"
