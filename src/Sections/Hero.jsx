@@ -20,7 +20,7 @@ const Hero = () => {
             href="#schedule"
             className="mx-auto inline-block cursor-pointer rounded bg-black px-5 py-3 text-lg font-bold text-white"
           >
-            Book Complementary Consulation
+            Book Complementary Consultation
           </a>
         </div>
       </div>
