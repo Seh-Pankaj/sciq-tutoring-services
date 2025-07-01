@@ -79,7 +79,7 @@ const Header = () => {
           <li>
             <a
               href="#services"
-              className="block rounded-sm px-3 py-2 text-gray-900 hover:bg-gray-100 focus:bg-gray-700 focus:text-white dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
+              className="block rounded-sm px-3 py-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
             >
               Services
             </a>
@@ -87,7 +87,7 @@ const Header = () => {
           <li>
             <a
               href="#about"
-              className="block rounded-sm px-3 py-2 text-gray-900 hover:bg-gray-100 focus:bg-gray-700 focus:text-white dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
+              className="block rounded-sm px-3 py-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
             >
               About
             </a>
@@ -95,7 +95,7 @@ const Header = () => {
           <li>
             <a
               href="#contact"
-              className="block rounded-sm px-3 py-2 text-gray-900 hover:bg-gray-100 focus:bg-gray-700 focus:text-white dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
+              className="block rounded-sm px-3 py-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
             >
               Contact
             </a>
