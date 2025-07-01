@@ -51,7 +51,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="font-inter flex-1 p-6 sm:px-8 sm:py-8 lg:px-12"
+      className="font-inter flex-1 p-6 sm:px-8 sm:py-8 lg:px-12 dark:text-gray-200"
     >
       <h2 className="mb-6 text-4xl font-light max-[576px]:text-3xl">
         Get in touch
@@ -66,7 +66,7 @@ const Contact = () => {
         <div className="mb-4">
           <input
             ref={nameRef}
-            className="mr-8 mb-0 w-60 rounded border-2 border-gray-300 p-2 focus:outline-gray-600 max-[576px]:mb-4"
+            className="mr-8 mb-0 w-60 rounded border-2 border-gray-300 p-2 focus:outline-gray-600 max-[576px]:mb-4 dark:placeholder:text-gray-200"
             type="text"
             name="name"
             id="name"
@@ -85,7 +85,7 @@ const Contact = () => {
             id="email"
             placeholder="Email"
             value={formDetails.email}
-            className="w-60 rounded border-2 border-gray-300 p-2 focus:outline-gray-600"
+            className="w-60 rounded border-2 border-gray-300 p-2 focus:outline-gray-600 dark:placeholder:text-gray-200"
             onChange={(e) => {
               setFormDetails({ ...formDetails, email: e.target.value });
               emailRef.current.classList.add("border-gray-300");
@@ -99,7 +99,7 @@ const Contact = () => {
           id="query"
           placeholder="Ask me!"
           value={formDetails.query}
-          className="h-24 w-128 rounded border-2 border-gray-300 p-2 focus:outline-gray-600 max-[576px]:w-60"
+          className="h-24 w-128 rounded border-2 border-gray-300 p-2 focus:outline-gray-600 max-[576px]:w-60 dark:placeholder:text-gray-200"
           onChange={(e) => {
             setFormDetails({ ...formDetails, query: e.target.value });
             queryRef.current.classList.add("border-gray-300");

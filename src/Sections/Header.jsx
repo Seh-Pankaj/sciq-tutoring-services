@@ -2,7 +2,6 @@ import { useRef } from "react";
 
 const Header = () => {
   const menuRef = useRef();
-  const defaultFocus = useRef();
 
   return (
     <div
@@ -42,7 +41,6 @@ const Header = () => {
         aria-expanded="false"
         onClick={() => {
           menuRef.current.classList.toggle("hidden");
-          defaultFocus.current.focus();
         }}
       >
         <span className="sr-only">Open main menu</span>
@@ -71,9 +69,8 @@ const Header = () => {
           <li>
             <a
               href="#home"
-              ref={defaultFocus}
               autoFocus
-              className="block rounded-sm px-3 py-2 text-gray-900 hover:bg-gray-100 focus:bg-gray-700 focus:text-white dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
+              className="block rounded-sm px-3 py-2 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
               aria-current="page"
             >
               Home
@@ -90,7 +87,7 @@ const Header = () => {
           <li>
             <a
               href="#about"
-              className="block rounded-sm px-3 py-2 text-gray-900 hover:bg-gray-100 active:bg-gray-700 active:text-white dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
+              className="block rounded-sm px-3 py-2 text-gray-900 hover:bg-gray-100 focus:bg-gray-700 focus:text-white dark:text-white dark:hover:bg-gray-700 dark:hover:text-white"
             >
               About
             </a>

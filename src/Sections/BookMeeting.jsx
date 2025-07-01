@@ -5,7 +5,7 @@ const BookMeeting = () => {
   return (
     <section
       id="schedule"
-      className="font-inter flex-1 p-6 sm:px-8 sm:py-8 lg:px-12"
+      className="font-inter flex-1 p-6 sm:px-8 sm:py-8 lg:px-12 dark:text-gray-200"
     >
       <h2 className="mb-6 text-4xl font-light max-[576px]:text-3xl min-[880px]:mb-2">
         Schedule a meeting

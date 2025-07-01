@@ -16,7 +16,9 @@ function App() {
         <About />
       </div>
       <Contact />
-      <div className="font-inter text-center text-2xl">OR</div>
+      <div className="font-inter text-center text-2xl dark:text-gray-200">
+        OR
+      </div>
       <BookMeeting />
       <Footer />
     </>
