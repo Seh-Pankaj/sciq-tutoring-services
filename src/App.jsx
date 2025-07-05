@@ -33,7 +33,7 @@ function App() {
     <>
       <Header />
       <Hero />
-      <div className="flex flex-col md:flex-row">
+      <div className="clear-both flex flex-col md:flex-row">
         <Services />
         <About />
       </div>
