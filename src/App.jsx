@@ -8,9 +8,23 @@ import Footer from "./Sections/Footer";
 import { useEffect } from "react";
 import { useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
+import { useAnimation } from "framer-motion";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
+
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "0px 0px -100px 0px" });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1, y: 0 });
+    }
+  }, [inView, controls]);
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -33,10 +47,16 @@ function App() {
     <>
       <Header />
       <Hero />
-      <div className="clear-both flex flex-col md:flex-row">
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 60 }}
+        animate={controls}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="clear-both flex flex-col md:flex-row"
+      >
         <Services />
         <About />
-      </div>
+      </motion.div>
       <Contact />
       <div className="font-inter text-center text-2xl dark:text-gray-200">
         OR

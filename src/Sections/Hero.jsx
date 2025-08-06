@@ -1,26 +1,81 @@
+import { motion } from "framer-motion";
+
+const initialAnimationState = { opacity: 0, y: 60 };
+const ani = { opacity: 1, y: 0 };
+const tran = { duration: 0.8, ease: "easeOut" };
+
 const Hero = () => {
+  const images = [
+    "/hero.jpg",
+    "/img2.jpg",
+    "/img3.jpg",
+    "/img4.jpg",
+    "/girl.jpg",
+  ];
+
+  const variants = {
+    hidden: { x: "50%", opacity: 0 },
+    visible: (i) => ({
+      x: "0%",
+      opacity: 1,
+      transition: {
+        delay: i * 0.5, // staggered delay
+        duration: 1,
+        ease: "easeOut",
+      },
+    }),
+  };
+
   return (
     <section className="m-6 sm:m-8 lg:m-12">
-      <div className="float-end m-4 hidden w-1/3 sm:block md:mx-8 lg:mx-16">
-        <img
-          src="/girl.jpg"
-          alt="quote-image"
-          className="aspect-[7/8] self-center rounded-2xl mask-t-from-50% object-cover object-bottom"
-        />
+      <div className="relative float-end m-4 hidden h-[300px] w-[400px] overflow-hidden sm:block md:mx-8 lg:mx-12">
+        {images.map((src, i) => (
+          <motion.img
+            key={src}
+            custom={i}
+            initial="hidden"
+            animate="visible"
+            variants={variants}
+            src={src}
+            alt={`Image ${i + 1}`}
+            className="absolute top-0 left-0 rounded-2xl object-cover"
+          />
+        ))}
       </div>
-      <div className="font-matangi relative z-10 mb-4 text-xl leading-relaxed font-bold underline-offset-4 sm:text-2xl md:mb-8 md:text-3xl lg:mb-10 lg:text-4xl dark:text-gray-200">
-        <img src="/girl.jpg" alt="student" className="rounded-xl sm:hidden" />
-        <div className="absolute right-0 bottom-3 w-[40%] text-amber-950 sm:static sm:w-full md:text-black dark:sm:text-white">
+      <div className="relative z-10 mb-4 aspect-video overflow-hidden sm:aspect-auto md:mb-8 lg:mb-10">
+        {images.map((src, i) => (
+          <motion.img
+            key={src}
+            custom={i}
+            initial="hidden"
+            animate="visible"
+            variants={variants}
+            src={src}
+            alt={`Image ${i + 1}`}
+            className="absolute top-0 left-0 h-full w-full rounded-2xl object-cover sm:hidden"
+          />
+        ))}
+        <motion.div
+          initial={initialAnimationState}
+          animate={ani}
+          transition={tran}
+          className="font-matangi absolute right-0 bottom-3 z-20 w-[40%] text-lg leading-relaxed font-bold text-amber-950 underline-offset-4 min-[420px]:text-xl sm:static sm:w-full sm:text-2xl md:text-3xl md:text-black lg:text-4xl dark:text-gray-200 dark:sm:text-white"
+        >
           One size <span className="underline">doesn't</span> fit all.
-        </div>
+        </motion.div>
       </div>
 
-      <div className="font-inter mb-8 leading-relaxed text-balance lg:mb-12 dark:text-gray-200">
-        At SciQ Biology Tutoring, we are a dedicated team of qualified science
-        educators and industry professionals working within the scientific
-        community. Led by a <b>VIT-registered</b> teacher and former{" "}
-        <b>researcher</b>, our mission is to help students succeed in high
-        school Biology, while supporting diverse learning needs. <br />
+      <motion.div
+        initial={initialAnimationState}
+        animate={ani}
+        transition={tran}
+        className="font-inter mb-8 leading-relaxed text-balance lg:mb-12 dark:text-gray-200"
+      >
+        At SciQ Biology Tutoring, we are a dedicated team of <b>Melbourne</b>{" "}
+        based qualified science educators and industry professionals working
+        within the scientific community. Led by a <b>VIT-registered</b> teacher
+        and former <b>researcher</b>, our mission is to help students succeed in
+        high school Biology, while supporting diverse learning needs. <br />
         <br />
         We specialise in <b>1-on-1</b> tutoring that aligns with the{" "}
         <b>Victorian Curriculum</b> and the{" "}
@@ -37,11 +92,11 @@ const Hero = () => {
         <b>top results in VCE Biology</b>, looking to strengthen your
         understanding of core topics, or need tailored support, SciQ Tutoring is
         here to help you thrive.
-      </div>
+      </motion.div>
       <div className="flex">
         <a
           href="#schedule"
-          className="mx-auto inline-block cursor-pointer rounded bg-black px-5 py-3 text-lg font-bold text-white"
+          className="text-md mx-auto inline-block cursor-pointer rounded bg-black px-4 py-3 font-bold text-white min-[400px]:text-lg"
         >
           Book Complementary Consultation
         </a>
