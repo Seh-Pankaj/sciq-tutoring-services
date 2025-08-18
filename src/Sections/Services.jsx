@@ -28,7 +28,11 @@ const Services = () => {
         </li>
         <li>
           <BiSolidSquare className="mr-2 mb-1 inline size-3" />
-          Support for Students with Diverse Learning Needs
+          School-assessed Coursework (SAC)
+        </li>
+        <li>
+          <BiSolidSquare className="mr-2 mb-1 inline size-3" />
+          Supporting Diverse Learner's Needs
         </li>
         <li>
           <BiSolidSquare className="mr-2 mb-1 inline size-3" />

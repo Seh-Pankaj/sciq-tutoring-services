@@ -19,8 +19,8 @@ const Hero = () => {
       x: "0%",
       opacity: 1,
       transition: {
-        delay: i * 0.5, // staggered delay
-        duration: 1,
+        delay: i * 0.7, // staggered delay
+        duration: 1.5,
         ease: "easeOut",
       },
     }),
@@ -59,7 +59,7 @@ const Hero = () => {
           initial={initialAnimationState}
           animate={ani}
           transition={tran}
-          className="font-matangi absolute right-0 bottom-3 z-20 w-[40%] text-lg leading-relaxed font-bold text-amber-950 underline-offset-4 min-[420px]:text-xl sm:static sm:w-full sm:text-2xl md:text-3xl md:text-black lg:text-4xl dark:text-gray-200 dark:sm:text-white"
+          className="font-matangi absolute right-0 bottom-3 z-20 w-[40%] text-lg leading-relaxed font-bold text-amber-950 underline-offset-4 min-[420px]:text-xl sm:static sm:w-full sm:text-2xl md:text-3xl md:text-black lg:text-4xl dark:text-amber-950 dark:sm:text-white"
         >
           One size <span className="underline">doesn't</span> fit all.
         </motion.div>

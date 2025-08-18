@@ -86,7 +86,7 @@ const Contact = () => {
           <div className="mb-4">
             <input
               ref={nameRef}
-              className="mr-8 mb-0 w-60 rounded border-2 border-gray-300 p-2 focus:outline-gray-600 max-[576px]:mb-4 dark:placeholder:text-gray-200"
+              className="mr-8 mb-0 w-full rounded border-2 border-gray-300 p-2 focus:outline-gray-600 max-[576px]:mb-4 sm:w-60 dark:placeholder:text-gray-200"
               type="text"
               name="name"
               id="name"
@@ -105,7 +105,7 @@ const Contact = () => {
               id="email"
               placeholder="Email"
               value={formDetails.email}
-              className="w-60 rounded border-2 border-gray-300 p-2 focus:outline-gray-600 dark:placeholder:text-gray-200"
+              className="w-full rounded border-2 border-gray-300 p-2 focus:outline-gray-600 sm:w-60 dark:placeholder:text-gray-200"
               onChange={(e) => {
                 setFormDetails({ ...formDetails, email: e.target.value });
                 emailRef.current.classList.add("border-gray-300");
@@ -119,7 +119,7 @@ const Contact = () => {
             id="query"
             placeholder="Ask me!"
             value={formDetails.query}
-            className="h-24 w-128 rounded border-2 border-gray-300 p-2 focus:outline-gray-600 max-[576px]:w-60 dark:placeholder:text-gray-200"
+            className="h-24 w-full rounded border-2 border-gray-300 p-2 focus:outline-gray-600 sm:w-128 dark:placeholder:text-gray-200"
             onChange={(e) => {
               setFormDetails({ ...formDetails, query: e.target.value });
               queryRef.current.classList.add("border-gray-300");
@@ -134,7 +134,7 @@ const Contact = () => {
           <br />
           <button
             type="submit"
-            className="my-2 w-60 cursor-pointer rounded bg-black px-4 py-2 text-center text-white"
+            className="my-2 w-full cursor-pointer rounded bg-black px-4 py-2 text-center text-white sm:w-60"
           >
             Submit
           </button>

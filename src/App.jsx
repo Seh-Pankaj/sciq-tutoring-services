@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import { useAnimation } from "framer-motion";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -45,6 +46,7 @@ function App() {
   };
   return (
     <>
+      <SpeedInsights />
       <Header />
       <Hero />
       <motion.div
